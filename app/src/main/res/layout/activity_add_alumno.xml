@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="inputData"
+    tools:context=".AddAlumnoActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileIv"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_add_a_photo"
+        app:civ_border_color="@color/colorGray1"
+        app:civ_border_overlay="true"
+        app:civ_border_width="1dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/idEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileIv"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_rectangle"
+        android:hint="Codigo"
+        android:inputType="textPersonName|textCapWords"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/nameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileIv"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_rectangle"
+        android:hint="Nombres"
+        android:inputType="textPersonName|textCapWords"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/telfEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameEt"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_rectangle"
+        android:hint="Teléfono"
+        android:inputType="phone"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/emailEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/telfEt"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_rectangle"
+        android:hint="Correo Electrónico"
+        android:inputType="textEmailAddress"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/dobEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailEt"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_rectangle"
+        android:hint="dd/mm/yy"
+        android:inputType="date"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/bioEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dobEt"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_rectangle"
+        android:gravity="start"
+        android:hint="Descripción Corta"
+        android:inputType="textCapSentences|textMultiLine"
+        android:minHeight="90dp"
+        android:padding="10dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="Registrar"
+        android:src="@drawable/ic_done" />
+</RelativeLayout>
