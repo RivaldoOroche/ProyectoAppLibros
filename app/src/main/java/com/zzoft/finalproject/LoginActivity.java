@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Ingrese Password", Toast.LENGTH_SHORT).show();
             txtpass.requestFocus();
         }else{
-            if(us.equals("USER01") && (pass.equalsIgnoreCase("12345"))){
+            if(us.equals("USER01") && (pass.equalsIgnoreCase("123456"))){
                 Toast.makeText(this,"Bienvenido",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
