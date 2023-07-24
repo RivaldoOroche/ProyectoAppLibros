@@ -10,7 +10,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.zzoft.finalproject.databinding.ActivityMainBinding;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
