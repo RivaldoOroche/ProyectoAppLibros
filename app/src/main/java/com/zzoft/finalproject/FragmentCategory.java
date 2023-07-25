@@ -1,6 +1,7 @@
 package com.zzoft.finalproject;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -12,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -39,12 +42,18 @@ public class FragmentCategory extends Fragment {
     private String mParam1;
     private String mParam2;
     RecyclerView recyclerView;
+    RecyclerView recyclerView2;
     adapter_category adapter_categoryy;
+    adapter_category adapter_category2;
     ArrayList<item_category> item_categoriess;
+    ArrayList<item_category> item_categories2;
+
+
     FirebaseFirestore db;
     public FragmentCategory() {
         // Required empty public constructor
     }
+
 
     /**
      * Use this factory method to create a new instance of
@@ -67,11 +76,9 @@ public class FragmentCategory extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -79,6 +86,10 @@ public class FragmentCategory extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_category, container, false);
+
+
+
+
         recyclerView= view.findViewById(R.id.reiclerr);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
@@ -86,7 +97,19 @@ public class FragmentCategory extends Fragment {
         item_categoriess = new ArrayList<>();
         adapter_categoryy= new adapter_category(getActivity(), item_categoriess);
         recyclerView.setAdapter(adapter_categoryy);
+
         EvenChangeListenet();
+
+
+        recyclerView2= view.findViewById(R.id.reiclerr2);
+        recyclerView2.setHasFixedSize(true);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        item_categories2 = new ArrayList<>();
+        adapter_category2= new adapter_category(getActivity(), item_categories2);
+
+        recyclerView2.setAdapter(adapter_category2);
+
+        EvenChangeListenet2();
         return view;
     }
     private void EvenChangeListenet(){
@@ -102,6 +125,23 @@ public class FragmentCategory extends Fragment {
                         item_categoriess.add(dc.getDocument().toObject(item_category.class));
                     }
                     adapter_categoryy.notifyDataSetChanged();
+                }
+            }
+        });
+    }
+    private void EvenChangeListenet2(){
+        db.collection("historia").orderBy("autor", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                if(error  != null){
+                    Log.e("error db",error.getMessage());
+                    return;
+                }
+                for (DocumentChange dc:value.getDocumentChanges()) {
+                    if (dc.getType()==DocumentChange.Type.ADDED){
+                        item_categories2.add(dc.getDocument().toObject(item_category.class));
+                    }
+                    adapter_category2.notifyDataSetChanged();
                 }
             }
         });

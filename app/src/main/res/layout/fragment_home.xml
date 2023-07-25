@@ -75,6 +75,7 @@
                             android:scaleType="centerInside"
                             android:padding="10dp"
                             android:src="@drawable/jhon"
+                            android:id="@+id/image12"
                             >
 
                         </ImageView>
@@ -86,14 +87,6 @@
                             android:text="FILOSOFIA FELINA"
                             >
                         </TextView>
-
-                        <Button
-                            android:id="@+id/bot1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Leer">
-
-                        </Button>
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>

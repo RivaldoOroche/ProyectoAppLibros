@@ -1,6 +1,9 @@
 package com.zzoft.finalproject;
 
-public class item_category {
+import java.io.Serializable;
+
+public class item_category implements Serializable {
+    String id;
     String autor;
     String titulo;
     String resumen;
@@ -9,9 +12,18 @@ public class item_category {
     public item_category() {
     }
 
-    public item_category(String titulo, String portada) {
+    public item_category(String id, String titulo, String portada) {
+        this.id = id;
         this.titulo = titulo;
         this.portada = portada;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitulo() {
