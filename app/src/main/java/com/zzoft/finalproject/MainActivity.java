@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new FragmentCategory());
                     break;
                 case R.id.navbar04:
-                    replaceFragment(new FragmentUser());
+                    replaceFragment(new FragmentBook());
                     break;
             }
 

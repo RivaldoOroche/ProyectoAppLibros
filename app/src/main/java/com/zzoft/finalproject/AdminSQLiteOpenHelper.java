@@ -1,6 +1,5 @@
 package com.zzoft.finalproject;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,11 +14,6 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table TBLALUMNO(id text primary key," +
-                "nombre text, telefono text, email text, fechaN text, descrip text)");
-
-        sqLiteDatabase.execSQL("create table TBLCURSO(idAlumno text primary key,nombreAlumno text)");
-
         sqLiteDatabase.execSQL("create table tblUser(id integer primary key autoincrement," +
                 "nombres text, email text, user text, password text)");
     }

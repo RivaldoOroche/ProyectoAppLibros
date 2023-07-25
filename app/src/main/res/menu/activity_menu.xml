@@ -17,7 +17,7 @@
     </item>
     <item
         android:id="@+id/navbar04"
-        android:title="Usuario"
+        android:title="Libro"
         android:icon="@drawable/ic_action_user">
     </item>
 </menu>
