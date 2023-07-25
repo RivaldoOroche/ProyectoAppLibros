@@ -3,5 +3,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="etNombre">Nombre</string>
+    <string name="etCrear">CREAR CUENTA</string>
+    <string name="etWelcome">BIENVENIDO A BOOKHUB</string>
+    <string name="etCorreo">Correo</string>
+    <string name="etDatos">DATOS DE USUARIO PARA LA APLICACION</string>
+    <string name="etUsuario">Nombre de Usuario</string>
+
+
+
+    DATOS DE USUARIO PARA LA APLICACION
+
+
+
 
 </resources>
