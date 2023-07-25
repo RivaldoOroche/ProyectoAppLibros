@@ -28,19 +28,31 @@ public class LoginActivity extends AppCompatActivity {
         if(us.isEmpty()){
             Toast.makeText(this, "Ingrese UserName", Toast.LENGTH_SHORT).show();
             txtusuario.requestFocus();
-        }else if(pass.isEmpty()){
+        } else if(pass.isEmpty()){
             Toast.makeText(this, "Ingrese Password", Toast.LENGTH_SHORT).show();
             txtpass.requestFocus();
-        }else{
-            if(us.equals("USER01") && (pass.equalsIgnoreCase("123456"))){
+        } else {
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "project", null, 1);
+            if(admin.verificarLogin(us, pass)){
                 Toast.makeText(this,"Bienvenido",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(this, MainActivity.class);
+                limpiar();
                 startActivity(i);
-            }else{
+            } else {
                 Toast.makeText(this,"Usuario o Password Incorrecto",Toast.LENGTH_SHORT).show();
-                finish();
+                limpiar();
             }
         }
-
     }
+
+    public void irNewCuenta(View view){
+        Intent i = new Intent(this, AddUserActivity.class);
+        startActivity(i);
+    }
+
+    public void limpiar(){
+        txtpass.setText("");
+        txtusuario.setText("");
+    }
+
 }
