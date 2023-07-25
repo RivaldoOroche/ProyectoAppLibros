@@ -17,7 +17,7 @@
             android:name=".activity_pdf"
             android:exported="false" />
         <activity
-            android:name=".CursoActivity"
+            android:name=".LibroActivity"
             android:exported="false" />
         <activity
             android:name=".AddUserActivity"

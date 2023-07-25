@@ -8,12 +8,5 @@
     <string name="etCorreo">Correo</string>
     <string name="etDatos">DATOS DE USUARIO PARA LA APLICACION</string>
     <string name="etUsuario">Nombre de Usuario</string>
-
-
-
-    DATOS DE USUARIO PARA LA APLICACION
-
-
-
-
+    <string name="etLibro">REGISTRO DE LIBRO</string>
 </resources>

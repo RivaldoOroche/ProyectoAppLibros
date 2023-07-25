@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void irCurso(View view){
-        Intent i = new Intent(this, CursoActivity.class);
+        Intent i = new Intent(this, LibroActivity.class);
         startActivity(i);
     }
     private void replaceFragment(Fragment fragment){
