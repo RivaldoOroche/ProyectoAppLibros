@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "992337206973",
+    "project_id": "bookhub-ccafb",
+    "storage_bucket": "bookhub-ccafb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992337206973:android:84b46416e6c17d9b97e1d4",
+        "android_client_info": {
+          "package_name": "com.zzoft.finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992337206973-ev67g60qu9hsgaksbo0d5hgr23b8b3bo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFluistkxSWlc2OBQsFfZ7xHd3RPKhA6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992337206973-ev67g60qu9hsgaksbo0d5hgr23b8b3bo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

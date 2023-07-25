@@ -1,12 +1,27 @@
 package com.zzoft.finalproject;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +38,10 @@ public class FragmentCategory extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    RecyclerView recyclerView;
+    adapter_category adapter_categoryy;
+    ArrayList<item_category> item_categoriess;
+    FirebaseFirestore db;
     public FragmentCategory() {
         // Required empty public constructor
     }
@@ -55,10 +73,37 @@ public class FragmentCategory extends Fragment {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_category, container, false);
+        View view= inflater.inflate(R.layout.fragment_category, container, false);
+        recyclerView= view.findViewById(R.id.reiclerr);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        db=FirebaseFirestore.getInstance();
+        item_categoriess = new ArrayList<>();
+        adapter_categoryy= new adapter_category(getActivity(), item_categoriess);
+        recyclerView.setAdapter(adapter_categoryy);
+        EvenChangeListenet();
+        return view;
+    }
+    private void EvenChangeListenet(){
+        db.collection("novela").orderBy("autor", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                if(error  != null){
+                    Log.e("error db",error.getMessage());
+                    return;
+                }
+                for (DocumentChange dc:value.getDocumentChanges()) {
+                    if (dc.getType()==DocumentChange.Type.ADDED){
+                        item_categoriess.add(dc.getDocument().toObject(item_category.class));
+                    }
+                    adapter_categoryy.notifyDataSetChanged();
+                }
+            }
+        });
     }
 }

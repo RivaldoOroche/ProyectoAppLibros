@@ -6,11 +6,13 @@
     tools:context=".FragmentSearch">
 
     <!-- TODO: Update blank fragment layout -->
-    <ImageView
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:src="@drawable/harry_azkabanz"
+        android:text="BUSCADOR"
+        android:textSize="50dp"
         >
-    </ImageView>
+
+    </TextView>
 
 </FrameLayout>
