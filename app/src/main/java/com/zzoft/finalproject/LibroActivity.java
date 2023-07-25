@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class CursoActivity extends AppCompatActivity {
+public class LibroActivity extends AppCompatActivity {
 
     private EditText codigoEt;
     private String idAlumno;
@@ -25,7 +25,7 @@ public class CursoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_curso);
+        setContentView(R.layout.activity_libro);
 
         codigoEt = findViewById(R.id.codEt);
 
@@ -39,7 +39,7 @@ public class CursoActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String selectedOption = options[i];
-                Toast.makeText(CursoActivity.this, "Seleccionaste: " + selectedOption, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LibroActivity.this, "Seleccionaste: " + selectedOption, Toast.LENGTH_SHORT).show();
             }
 
             @Override
