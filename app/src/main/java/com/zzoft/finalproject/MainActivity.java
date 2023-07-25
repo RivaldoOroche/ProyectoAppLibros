@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         replaceFragment(new FragmentHome());
         binding.menuvar.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         });
+
     }
 
     public void irAddAlumno(View view){
