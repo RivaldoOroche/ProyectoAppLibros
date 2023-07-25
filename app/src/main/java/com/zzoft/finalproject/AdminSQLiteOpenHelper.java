@@ -2,6 +2,7 @@ package com.zzoft.finalproject;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -18,6 +19,20 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 "nombre text, telefono text, email text, fechaN text, descrip text)");
 
         sqLiteDatabase.execSQL("create table TBLCURSO(idAlumno text primary key,nombreAlumno text)");
+
+        sqLiteDatabase.execSQL("create table tblUser(id integer primary key autoincrement," +
+                "nombres text, email text, user text, password text)");
+    }
+
+    public boolean verificarLogin(String user, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {"user"};
+        String selection = "user = ? AND password = ?";
+        String[] selectionArgs = {user, password};
+        Cursor cursor = db.query("tblUser", columns, selection, selectionArgs, null, null, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count > 0;
     }
 
     @Override

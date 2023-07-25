@@ -5,17 +5,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
-import com.denzcoskun.imageslider.ImageSlider;
-import com.denzcoskun.imageslider.models.SlideModel;
 import com.zzoft.finalproject.databinding.ActivityMainBinding;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void irAddAlumno(View view){
-        Intent i = new Intent(this, AddAlumnoActivity.class);
+        Intent i = new Intent(this, AddUserActivity.class);
         startActivity(i);
     }
 
