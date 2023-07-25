@@ -5,11 +5,7 @@
         android:title="BookHub"
         android:icon="@drawable/ic_action_home">
     </item>
-    <item
-        android:id="@+id/navbar02"
-        android:title="Buscar"
-        android:icon="@drawable/ic_action_search">
-    </item>
+
     <item
         android:id="@+id/navbar03"
         android:title="Categoria"

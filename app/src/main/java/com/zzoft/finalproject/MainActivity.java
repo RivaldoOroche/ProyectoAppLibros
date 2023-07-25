@@ -26,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navbar01:
                     replaceFragment(new FragmentHome());
                     break;
-                case R.id.navbar02:
-                    replaceFragment(new FragmentSearch());
-                    break;
                 case R.id.navbar03:
                     replaceFragment(new FragmentCategory());
                     break;
